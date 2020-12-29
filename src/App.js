@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import requests from './requests';
+import Row from './Row';
 
 function App() {
+  document.title = 'Fake Netflix.com'
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Row title="NETFLIX ORIGINALS" url={requests.fetchNetflixOriginals} isLargeRow={true} />
+      <Row title="Trending Now" url={requests.fetchTrending} />
     </div>
   );
 }
