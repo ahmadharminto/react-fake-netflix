@@ -12,7 +12,8 @@ function App() {
       <Nav />
       <Banner />
       <Row title="NETFLIX ORIGINALS" url={requests.fetchNetflixOriginals} isLargeRow={true} />
-      <Row title="Trending Now" url={requests.fetchTrending} />
+      <Row title="Trending Now (Weekly)" url={requests.fetchTrending} />
+      <Row title="Top Rated" url={requests.fetchTopRated} />
     </div>
   );
 }
