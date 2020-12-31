@@ -6,7 +6,7 @@ import requests from './requests'
 const {REACT_APP_API_POSTER_URL} = process.env;
 
 function Banner() {
-    const [movie, setMovie] = useState([]);
+    const [movie, setMovie] = useState(null);
 
     let truncate = (str, n) => {
         return str?.length > n ? str.substr(0, n-1) + '...' : str;
@@ -25,7 +25,7 @@ function Banner() {
 
     return (
         <header className="banner" style={{ 
-            backgroundImage: `url(${REACT_APP_API_POSTER_URL}${movie?.backdrop_path})`,
+            backgroundImage: (movie) ? `url(${REACT_APP_API_POSTER_URL}${movie?.backdrop_path})` : "",
             backgroundSize: "cover",
             backgroundPosition: "center center"
          }}>
